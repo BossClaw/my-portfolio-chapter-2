@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BossClaw's Portfolio - Chapter 2</title>
+
+    <link rel="stylesheet" href="css/styles_nes.css" />
+    <link rel="stylesheet" href="css/anim.css" />
+    <link rel="stylesheet" href="css/crt.css" />
+
+    <script defer src="js/script.js"></script>
+</head>
+
+<!-- NOTE - CRT DISABLED FOR NOW -->
+<!-- <body class="crt"> -->
+
+<body>
+    <a name="top"></a>
+
+    <div class="bodyContent">
+        <header>
+            <img src="/img/logo.png" class="mw-100" />
+
+            <nav>
+                <ul>
+                    <li><a href="#projects">GAMES</a></li>
+                    <li><a href="#projects">PROGRAMMING</a></li>
+                    <li><a href="#projects">ILLUSTRATING</a></li>
+                    <li><a href="#projects">MALARKEY-ING'</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <main>
+            <section id="about" class="border_nes content_half flex_response">
+                <div class="tc">
+                    <img src="/img/claw_face.png" class="mw-100">
+                </div>
+
+                <div class="tc">
+                    <h2>About</h2>
+                    <p>Born surrounded by wood panelling.<br />
+                        Raised in a VHS rental store.<br />
+                        Got into fights over LEGO.<br />
+                        Taught myself C64 BASIC in grade 5.<br /><br /><br />
+                        Destined for Programming and Game Dev!</p>
+                </div>
+            </section>
+
+
+            <section id="projects" class="border_nes content_full tc">
+                <a name="projects"></a>
+
+                <h2>Project Gallery</h2>
+                <!-- <p>This is a placeholder for your projects. In future chapters, you’ll add real projects here.</p> -->
+
+                <div class="proj_gallery flex_response">
+                    <div>
+                        <img src="/img/proj.gif" class="proj_img">
+                        <a>Project #1</a>
+                    </div>
+
+                    <div>
+                        <img src="/img/proj.gif">
+                        <a>Project #2</a>
+                    </div>
+                    <div>
+                        <img src="/img/proj.gif">
+                        <a>Project #3</a>
+                    </div>
+                    <div>
+                        <img src="/img/proj.gif">
+                        <a>Project #4</a>
+                    </div>
+
+                </div>
+            </section>
+
+
+            <section id="contact" class="border_nes content_half flex_response">
+                <div>
+                    <h2>Contact Me</h2>
+                </div>
+
+                <div>
+                    <div class="form_wrapper">
+                        <p>Working Contact form Coming soon!<br />
+
+                        <div class="h_container flex_between m_block_half">
+                            <label for="contact_name">Name</label>
+                            <input name="contact_name" type="text" placeholder="your email">
+                        </div>
+
+                        <div class="h_container flex_between m_block_half">
+                            <label for="contact_subject">Subject</label>
+                            <input name='contact_subject' type="text" placeholder="your subject">
+                        </div>
+
+                        <div class="h_container flex_between m_block_half">
+                            <label for="contact_email">Email</label>
+                            <input type="text" placeholder="your email">
+                        </div>
+
+                        <div class="h_container m_block_half">
+                            <button>Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="bottom_content" class="content_auto flex_response">
+                <div class="border_nes">
+                    <h5>Socials</h5>
+                    <ul>
+                        <li><a>Itch.io</a></li>
+                        <li><a>Bluesky</a></li>
+                        <li><a>Mastodon</a></li>
+                        <li><a>Youtube</a></li>
+                    </ul>
+                </div>
+
+                <div class="border_nes">
+                    <h5>Site Nav</h5>
+                    <ul>
+                        <li><a href='/'>Home</a></li>
+                        <li><a href='/'>Projects</a></li>
+                        <li><a href='/'>Work</a></li>
+                        <li><a href='/'>Misc</a></li>
+                        <li><a href='/'>Top Secret</a></li>
+                    </ul>
+                </div>
+
+                <div class="border_nes tc">
+                    <h5>Newsletter Signup</h5>
+
+                    <p>Receive infrequent updates about cool stuff!</p>
+
+                    <input type="string" placeholder="your email">
+                    <button class="w-100">Send</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 20XX boss_claw <span class='cursor'></span> <a href='#top'>Top</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // MANUALLY REG THE LOGIC TO THE BUTTON
+        // document.getElementById("save-btn").addEventListener("click", () => { do_task(1, document.getElementById("username").value, document.getElementById("task_output"), document.getElementById("display-name")) });
+        // document.getElementById("clear-btn").addEventListener("click", () => { do_task(2, document.getElementById("username").value, document.getElementById("task_output"), document.getElementById("display-name")) });
+
+        // RUN ON PAGE LOAD
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     update_name_display(document.getElementById("task_output"), document.getElementById("display-name"));
+        // });
+
+        // RUN ON SCROLL
+        // document.addEventListener("scroll", () => {
+        //     let scrollY = window.scrollY;
+        //     document.querySelectorAll(".layer").forEach(layer => {
+        //         let speed = layer.getAttribute("data-speed");
+        //         layer.style.transform = `translateY(${scrollY * speed}px)`;
+        //     });
+        // });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/bg.css" />
+</head>
+
+</html>
+
+<body>
+    <div id="parallax_container">
+        <main>
+            <div class='content_div build_top'>
+                <div>LOGO</div>
+                <div>STUFF</div>
+            </div>
+
+            <div class='content_div build_mid'>
+                <div>IMG</div>
+                <div>INFO</div>
+            </div>
+
+            <div class='content_div build_mid'>
+                <div>IMG</div>
+                <div>INFO</div>
+            </div>
+
+            <div class='content_div build_mid'>
+                <div>IMG</div>
+                <div>INFO</div>
+            </div>
+
+            <div class='content_div build_bot'>
+                <div>IMG</div>
+                <div>INFO</div>
+                <!-- TODO - LITTLE CLICKER GAME -->
+                <!-- TODO - CLICK ON SPACE ROBOT / MORPHS BOTS AND GET POWERUPS -->
+                <!-- TODO - BOTS WALK IN FROM LEFT AND RIGHT -->
+            </div>
+        </main>
+    </div>
+
+    <footer class="footer">
+
+    </footer>
+</body>
+
+
+
+<script>
+    function update_bg_scroll(scroll_y) {
+        const scroll_bg = 384 + (scroll_y * 0.80);
+        const scroll_mg = 384 + (scroll_y * 0.90);
+        const scroll_fg = 384 + (scroll_y * 0.94);
+
+        console.log(`SCROLL_Y[${scroll_y}] BG[${scroll_bg}] MG[${scroll_mg}] FG[${scroll_fg}]`);
+
+        document.documentElement.style.setProperty("--scroll-bg", `${scroll_bg}px`);
+        document.documentElement.style.setProperty("--scroll-mg", `${scroll_mg}px`);
+        document.documentElement.style.setProperty("--scroll-fg", `${scroll_fg}px`);
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        update_bg_scroll(0);
+    });
+
+    document.addEventListener("scroll", () => {
+        update_bg_scroll(window.scrollY);
+    });
+
+</script>

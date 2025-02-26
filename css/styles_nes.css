@@ -1,0 +1,408 @@
+:root {
+  --brightest: #ffffff;
+  --bright: #cccccc;
+
+  --mid: #009999;
+  --mid_hover: #00bbbb;
+
+  --dark: #666666;
+  --dark_hover: #999999;
+
+  --page_border: #333333;
+  --page_bg: #000000;
+
+  --text_size: 16px;
+
+  --border_size: 4px;
+
+  --section_margin: 32px;
+  --pad_gap: 16px;
+
+  --footer_min_height: 32px;
+}
+
+
+@font-face {
+  font-family: "NESFont";
+  src: url("../fonts/PressStart2P.ttf") format("truetype");
+}
+
+
+/* FORCE SAME FONT / CURSOR DEFAULT FOR EVERYTHING */
+* {
+  color: var(--brightest);
+  font-family: "NESFont", sans-serif;
+  font-size: var(--text_size);
+  line-height: calc(var(--text_size) + 4px);
+  font-weight: normal;
+  cursor: url('../img/cursor.png') 0 2, auto;
+}
+
+
+body {
+  margin: 0;
+  padding: var(--pad_gap);
+
+  background-color: var(--page_border);
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  color: var(--bright);
+}
+
+
+.bodyContent {
+  min-width: 425px;
+  max-width: 960px;
+
+  margin-inline: auto;
+  padding: var(--pad_gap);
+  /* SLIGHTLY RESPONSIVE FOR A START */
+  background-color: var(--page_bg);
+
+  /* ENSURE THE CONTENT IS 'PUSHED UP' AND NOT HIDDEN BY FIXED FOOTER */
+  padding-bottom: calc(var(--footer_min_height) + (var(--pad_gap) * 3));
+}
+
+/* NAV & LINKS */
+nav {
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
+  margin-block: var(--pad_gap / 2);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: var(--bright);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+
+a,
+a:visited {
+  color: var(--mid);
+  text-decoration: none;
+  border-bottom: 2px solid #00000000;
+  text-align: center;
+}
+
+a:hover {
+  color: var(--mid_hover);
+  text-decoration: none;
+  border-bottom: 2px solid var(--mid_hover);
+}
+
+
+
+/* MAIN PAGE CONTENT */
+main {
+  min-height: calc(70vh);
+}
+
+
+
+/* FORM ELEMENTS */
+
+.form_wrapper {
+  width: 80%;
+  margin-inline: 0 auto;
+  padding: var(--pad_gap);
+}
+
+input {
+  border: 0;
+  background-color: var(--dark);
+  color: var(--bright);
+  padding: 4px;
+}
+
+input:focus {
+  color: var(--brightest);
+}
+
+
+input[type="radio"],
+input[type="checkbox"] {
+  place-content: center;
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  vertical-align: bottom;
+}
+
+input[type="radio"] {
+  border-radius: 8px;
+}
+
+input[type="radio"]:checked,
+input[type="checkbox"]:checked {
+  background-color: var(--mid);
+}
+
+
+button {
+  color: var(--bright);
+
+  border: 2px solid var(--brightest);
+  border-right-color: var(--bright);
+  border-bottom-color: var(--dark);
+  background-color: var(--mid);
+
+  padding: 4px;
+  display: block;
+  margin-block: var(--pad_gap);
+}
+
+
+button:hover {
+  color: var(--brightest);
+  background-color: var(--mid_hover);
+  border-bottom-color: var(--dark_hover);
+}
+
+
+/* FIELDSET / LABELS */
+fieldset {
+  border: 4px solid var(--bright);
+}
+
+label {
+  display: inline-block;
+}
+
+fieldset label {
+  /* width: 100%; */
+  display: inline-block;
+}
+
+
+
+/* MODAL */
+#modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+#modalContent {
+  background: brightest;
+  border: 4px solid var(--dark);
+  color: var(--dark);
+  padding: 20px;
+  text-align: center;
+  min-width: 50%;
+}
+
+#modalContent button {
+  width: 50%;
+  margin-inline: auto;
+}
+
+.sr-only {
+  display: none;
+}
+
+/* DYN CONTAINERS */
+.h_container {
+  display: flex;
+  gap: var(--pad_gap);
+  align-items: center;
+  justify-content: center;
+}
+
+.flex_between {
+  justify-content: space-between;
+}
+
+
+.h_container button {
+  flex: 1 1 0;
+}
+
+
+
+/* BORDERS */
+.border_nes {
+  border: 16px solid transparent;
+  padding: 8px;
+  border-image: url('../img/border.png') 16 round;
+}
+
+
+/* PORTFOLIO CONTENT */
+.content_auto,
+.content_half,
+.content_full {
+  display: flex;
+  align-items: stretch;
+  margin-inline: auto;
+  margin-block: var(--section_margin);
+  min-width: 540px;
+  max-width: 960px;
+  flex-direction: row;
+}
+
+.content_full {
+  flex-direction: column;
+}
+
+.content_half {
+  gap: var(--pad_gap);
+}
+
+.content_half div:first-child {
+  flex: 1 1 0;
+}
+
+.content_half div {
+  flex: 3 1 0;
+}
+
+.content_auto {
+  gap: var(--pad_gap);
+  justify-content: space-between;
+}
+
+.content_auto div {
+  flex: 1 1 0;
+}
+
+.content_auto h5 {
+  text-align: center;
+}
+
+
+/* GALLERY */
+
+.proj_gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  gap: var(--pad_gap);
+}
+
+.proj_gallery div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--pad_gap);
+}
+
+.proj_gallery img {
+  /* EMBIGGEN THE IMAGES,BUT NOT TOO MUCH */
+  width: 100%;
+  max-width: 256px;
+}
+
+
+/* MULTI_USE */
+.mw-100 {
+  max-width: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.tl {
+  text-align: left;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tr {
+  text-align: right;
+}
+
+.m_block {
+  margin-block: var(--pad_gap);
+}
+
+.m_block_half {
+  margin-block: calc(var(--pad_gap) /2);
+}
+
+
+/* FOOTER CONTENT */
+footer {
+  /* TODO - FF1 STYLE BATTLE MENU */
+  /* TODO - RESPONSIVE TO MATCH THE BODY CONTENT */
+  position: fixed;
+  width: 100%;
+  max-width: 960px;
+  min-height: var(--footer_min_height);
+  padding-block: var(--pad_gap);
+  left: translateY(-50%);
+  bottom: 0;
+  background-color: black;
+  text-align: center;
+}
+
+
+/* SIMPLE FLEX RESPONSIVE */
+.flex_response {
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media (max-width: 920px) {
+
+  /* TODO - SUPPORT MORE BREAKPOINTS, eg: 325px, 4K SMALLER VIA INSPECTOR */
+  /* :root{
+    --pad_gap: 4px;
+  } */
+
+  nav ul li {
+    display: block;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  body{  
+    margin: 0;
+    padding: 0;
+  }
+
+
+  /* KEEP THE PADDING FOR THE FOOTER */
+  .bodyContent {
+    margin: 0;
+    padding: 0;
+    padding-bottom: calc(var(--footer_min_height) + (var(--pad_gap) * 3));
+  }
+
+  .flex_response {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .form_wrapper {
+    margin: 0;
+  }
+}

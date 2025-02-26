@@ -1,0 +1,88 @@
+:root {
+    --scroll-offset: 0;
+
+    --scroll-bg: -1px;
+    --scroll-mg: -1px;
+    --scroll-fg: -1px;
+
+    --pad_gap: 16px;
+
+    --section_height: 392px;
+}
+
+body {
+    margin: 0;
+    background: url('../img/bg_SKY.png') repeat-x fixed center / auto 100vh;
+}
+
+#parallax_container {
+    background-image: url('../img/bg_FG.png'), url('../img/bg_MG.png'), url('../img/bg_BG.png');
+    background-position: left var(--scroll-fg), left var(--scroll-mg), left var(--scroll-bg);
+    background-repeat: repeat-x, repeat-x, repeat-x;
+    background-size: 100%;
+    margin: 0;
+    padding: 0;
+    /* overflow-y: hidden; */
+}
+
+.build_top {
+    background-image: url("/img/bg_BUILD_TOP.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: var(--section_height);
+}
+
+.build_mid {
+    background-image: url("/img/bg_BUILD_MID.png");
+    background-position: right bottom;
+    background-repeat: repeat-y;
+    background-size: 100%;
+    min-height: var(--section_height);
+}
+
+.build_bot {
+    background-image: url("/img/bg_BUILD_BOT.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: var(--section_height);
+}
+
+
+/* CONTENT STYLING */
+
+main {
+    width: 60%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+.content_div {
+    color: white;
+    margin: 0 auto;
+    display: flex;
+    gap: var(--pad_gap);
+    padding: 0;
+    border: 1px solid white;
+}
+
+.content_div div {
+    padding: var(--pad_gap);
+    border: 1px solid yellow;
+    flex: 1 1 0;
+}
+
+#bg_bottom {
+    background-color: green;
+    width: 100%;
+    height: 64px;
+}
+
+.footer {
+    color: white;
+    background-color: #242424;
+    width: 100%;
+    height: 128px;
+}
